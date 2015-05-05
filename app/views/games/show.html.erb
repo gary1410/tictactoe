@@ -1,0 +1,24 @@
+<% provide(:title, 'Play Game') %>
+
+<br/>
+
+<h1>Play Game</h1>
+
+<table id="board">
+  <!-- iterate through each array in board, grabs the array and the index -->
+  <% @game.board.each_with_index do |array, row| %>
+    <tr>
+      <% array.each_with_index do |element, column| %>
+
+        <td class="<%= create_cell_class(row, column) %>" >
+          <% if element %>
+            <%= element %>
+          <% else %>
+            <%= render :partial => "board_form", :locals => {:game => @game, :row => row, :column => column } %>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+
+</table>
