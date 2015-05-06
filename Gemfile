@@ -27,3 +27,5 @@ group :development do
   gem 'awesome_print'
   gem 'quiet_assets'
 end
+
+gem 'rails_12factor', group: :production
