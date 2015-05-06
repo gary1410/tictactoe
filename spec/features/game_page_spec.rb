@@ -28,4 +28,9 @@ feature "User is taken to the game" do
       expect(page).to have_selector('td'), text: 'x'
     end
   end
+
+    scenario 'user sees the cells' do
+      @game.update_board('x', 0, 1)
+      page.has_css?(".top .left")
+    end
 end
