@@ -10,7 +10,7 @@ module GamesHelper
   end
 
   def create_cell_class(row, column)
-    row_number = case row
+    case row
       when 0 then build_row_0_and_columns(row, column)
       when 1 then build_row_1_and_columns(row, column)
       when 2 then build_row_2_and_columns(row, column)
@@ -19,7 +19,7 @@ module GamesHelper
 
   private
 
-  def check_row_0_and_columns(row, column)
+  def build_row_0_and_columns(row, column)
     case row
       when 0
         case column
@@ -33,7 +33,7 @@ module GamesHelper
     end
   end
 
-  def check_row_1_and_columns(row, column)
+  def build_row_1_and_columns(row, column)
      case row
       when 1
         case column
@@ -47,7 +47,7 @@ module GamesHelper
       end
   end
 
-  def check_row_2_and_columns(row, column)
+  def build_row_2_and_columns(row, column)
     case row
      when 2
       case column

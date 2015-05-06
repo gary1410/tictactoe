@@ -5,7 +5,7 @@ describe GamesHelper do
     @test_game = Game.new
   end
 
-  describe "display_element" do
+  describe "#display_element" do
     it "should display @board element" do
       @test_game.update_board('x', 0, 1)
 
@@ -24,8 +24,8 @@ describe GamesHelper do
     end
   end
 
-  describe "create_cell_class" do
-    context "case when 0" do
+  describe "#create_cell_class" do
+    context "#build_row_0_and_columns / case when 0" do
       it "creates the first row and the first column " do
         @test_game.update_board('x', 0, 0)
 
@@ -46,7 +46,7 @@ describe GamesHelper do
       end
     end
 
-    context "case when 1" do
+    context "#build_row_1_and_columns case / when 1" do
       it "creates the second row and the first column" do
         @test_game.update_board('x', 1, 0)
         expect(@test_game.create_cell_class(1, 0)).to eq('left horizontal-mid')
@@ -64,7 +64,7 @@ describe GamesHelper do
     end
 
 
-    context "Case when 2" do
+    context "#build_row_2_and_columns Case / when 2" do
       it "creates the third row and the first column" do
         @test_game.update_board('x', 2, 0)
         expect(@test_game.create_cell_class(2, 0)).to eq('left bottom')
